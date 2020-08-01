@@ -1,16 +1,24 @@
 // Write your Character component here
 import React, {useState, useEffect} from 'react'
 import axios from "axios";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 function Character(props) {
     
     const [myCharacter, setCharacters] = useState([])
 
-    
+    const SimpleAnimation2 = keyframes `
+    0%{color: pink};
+    25%{color: purple};
+    50%{color: gray};
+    75%{color: yellow}; `
 
     const MioHeader = styled.h2`
-    color:red
+    color:red;
+    font-size: 3rem;
+    text-decoration: underline;
+    animation-name: ${SimpleAnimation2};
+    animation-duration: 5s;
     
     `;
 

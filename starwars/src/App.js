@@ -1,46 +1,26 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 import axios from "axios";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import Character from "../src/components/Character.js";
-
-
-// function App() {
-//   const [mainCharacter, setCharacter] = useState([]);
-//   const [sideCharacter, setSideCharacter] = useState();
-//   const MainHeader = styled.h1`
-//   color: red;
-//   `;
-
-//   const SideCharacter = styled.h2`
-//   color:blue;
-  
-//   `
-
-//   useEffect(() => {
-//     axios.get("https://swapi.dev/api/films/1/")
-//       .then(response => {
-//         console.log("Success", response);
-//         setCharacter(response.data.characters);
-        
-//       })
-//       .catch(error => {
-//         console.log("error", error);
-//       })
-
-
-
-//   },[])
-
-  
-
-
-  
-
 
 
 const App = () => {
   const [mainCharacter, setCharacter] = useState([]);
+
+  const SimpleAnimation = keyframes `
+  0%{color: yellow};
+  25%{color: gray};
+  50%{color: green};
+  75%{color: blue};
+  
+  `
+  const LetterStyler = styled.h2`
+  color: purple;
+  animation-name: ${SimpleAnimation};
+  animation-duration: 5s;
+  
+  `
 
   useEffect(() => {
     axios.get("https://swapi.dev/api/films/1/")
@@ -65,7 +45,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <LetterStyler className="Header">Characters</LetterStyler>
       {mainCharacter.map(url => <Character key={url} characterList={url}/>)}
     </div>
   );

@@ -30,11 +30,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+- React JS is a library created by facebook. It uses components to breakdown a webpage into multiple pieces that then unite to make the webpage. React strives to reduce loading times due to the one direction flow of data (from parent to children)
+
 1. Describe component state.
+
+-Component State keeps track of the data that is within the component
 
 1. Describe props.
 
+-Props are what allows one component to pass data to another component.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+-A side effect is something that changes from outside the scope of your function. You use the useEffect hook in react to deal with any specific changes to props or state.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
